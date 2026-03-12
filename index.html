@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRAP HAPPENS | Premium Metal Recovery | Creswell, OR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rust: #8B4513;
+            --copper: #B87333;
+            --steel: #71797E;
+            --iron: #2C3539;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --accent: #FF4500;
+            --oregon-green: #2E5C48;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* GRAPHIC HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(44,53,57,0.8) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect fill="%230a0a0a" width="1000" height="1000"/><path fill="%231a1a1a" d="M0 0h1000v1000H0z" opacity="0.5"/><circle fill="%232C3539" cx="200" cy="200" r="150" opacity="0.3"/><circle fill="%238B4513" cx="800" cy="800" r="200" opacity="0.2"/></svg>');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 8px solid var(--copper);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(184, 115, 51, 0.03) 10px,
+                rgba(184, 115, 51, 0.03) 20px
+            );
+            pointer-events: none;
+        }
+
+        .logo-main {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            letter-spacing: 0.05em;
+            color: var(--white);
+            text-shadow: 
+                0 0 20px rgba(184, 115, 51, 0.5),
+                4px 4px 0px var(--rust);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            line-height: 0.9;
+        }
+
+        .tagline-graphic {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 2rem;
+            border-top: 2px solid var(--copper);
+            border-bottom: 2px solid var(--copper);
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-graphic {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--copper) 0%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin: 2rem 0;
+            animation: pulse 3s infinite;
+            box-shadow: 0 0 60px rgba(184, 115, 51, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .cta-hero {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-big {
+            padding: 1.5rem 4rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            background: var(--copper);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-big::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-big:hover::before {
+            left: 100%;
+        }
+
+        .btn-big:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(184, 115, 51, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            z-index: 1000;
+            border-bottom: 3px solid var(--copper);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--copper);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--copper);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--copper);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* GRAPHIC SECTION HEADERS */
+        .section-graphic {
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-title-graphic {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--white);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title-graphic::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 8px;
+            background: var(--copper);
+            margin-top: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--steel);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* SERVICES GRID WITH GRAPHICS */
+        .services-dark {
+            background: 
+                linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(184, 115, 51, 0.05) 50px,
+                    rgba(184, 115, 51, 0.05) 51px
+                );
+        }
+
+        .services-grid-graphic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card-graphic {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 2px solid #333;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .service-card-graphic::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--copper);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .service-card-graphic:hover {
+            border-color: var(--copper);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .service-card-graphic:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon-graphic {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .service-title-graphic {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .service-desc-graphic {
+            color: #999;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-price {
+            color: var(--copper);
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ENVIRONMENTAL STRIP */
+        .env-strip {
+            background: var(--oregon-green);
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .env-strip::before {
+            content: "♻";
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            right: -50px;
+            top: -50px;
+            color: var(--white);
+        }
+
+        .env-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .env-stat-large {
+            text-align: center;
+        }
+
+        .env-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--white);
+            display: block;
+            line-height: 1;
+        }
+
+        .env-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+        }
+
+        /* CREW SECTION - VISUAL */
+        .crew-section {
+            background: var(--iron);
+            position: relative;
+        }
+
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .crew-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #333 0%, #1a1a1a 100%);
+            border: 3px solid #444;
+        }
+
+        .crew-image-placeholder {
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .crew-image-placeholder::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        .crew-info-graphic {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .crew-name-graphic {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .crew-role {
+            color: var(--copper);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .crew-tagline {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--steel);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem;
+            border-left: 4px solid var(--copper);
+            border-right: 4px solid var(--copper);
+            background: rgba(0,0,0,0.3);
+        }
+
+        /* CONTACT SECTION - BIG AND BOLD */
+        .contact-graphic {
+            background: var(--black);
+            text-align: center;
+        }
+
+        .phone-big {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: var(--copper);
+            text-decoration: none;
+            display: block;
+            margin: 3rem 0;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            text-shadow: 0 0 30px rgba(184, 115, 51, 0.3);
+        }
+
+        .phone-big:hover {
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            text-align: left;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid var(--copper);
+        }
+
+        .contact-label {
+            color: var(--copper);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1.3rem;
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        /* FOOTER GRAPHIC */
+        footer {
+            background: #050505;
+            padding: 4rem 2rem;
+            border-top: 8px solid var(--copper);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--copper);
+            margin-bottom: 2rem;
+        }
+
+        .footer-tagline {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .service-areas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            color: #333;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid-graphic {
+                grid-template-columns: 1fr;
+            }
+            
+            .crew-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .env-content {
+                flex-direction: column;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">SCRAP HAPPENS</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#environment">Environment</a></li>
+                <li><a href="#crew">The Crew</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-graphic">⚡</div>
+        <h1 class="logo-main">SCRAP HAPPENS</h1>
+        <div class="tagline-graphic">Premium Metal Recovery • Creswell, Oregon</div>
+        <p style="font-size: 1.3rem; color: #999; max-width: 600px; margin: 2rem auto;">
+            When metal piles up, we muscle it out. Professional scrap removal with an Oregon conscience.
+        </p>
+        <div class="cta-hero">
+            <a href="tel:541-735-5292" class="btn-big">Call Carson Now</a>
+            <a href="#services" class="btn-big btn-outline">View Services</a>
+        </div>
+    </section>
+
+    <section class="section-graphic services-dark" id="services">
+        <div class="section-header">
+            <h2 class="section-title-graphic">WHAT WE HAUL</h2>
+            <p class="section-subtitle">No job too heavy. No pile too ugly. We take it all.</p>
+        </div>
+
+        <div class="services-grid-graphic">
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">🚛</span>
+                <h3 class="service-title-graphic">FREE PICKUP</h3>
+                <p class="service-desc-graphic">
+                    You sit back. We sweat. Free residential and commercial pickup anywhere in Lane County. Trucks, trailers, and heavy equipment ready to roll.
+                </p>
+                <div class="service-price">$0 Call-out Fee</div>
+            </div>
+
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">⚡</span>
+                <h3 class="service-title-graphic">COPPER & BRASS</h3>
+                <p class="service-desc-graphic">
+                    Premium pricing for premium metals. We separate your #1 and #2 copper, brass fittings, and insulated wire. You get paid what it's worth.
+                </p>
+                <div class="service-price">Top Market Rates</div>
+            </div>
+
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">🏗️</span>
+                <h3 class="service-title-graphic">CONSTRUCTION CLEANUP</h3>
+                <p class="service-desc-graphic">
+                    Demolition sites, renovation leftovers, job site debris. We clear steel beams, rebar, aluminum siding, and electrical scrap fast.
+                </p>
+                <div class="service-price">Contractor Rates Available</div>
+            </div>
+
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">🌲</span>
+                <h3 class="service-title-graphic">FARM & ESTATE</h3>
+                <p class="service-desc-graphic">
+                    Tractor removal, barn cleanouts, fence line clearing. We respect your land while removing the rusted legacy of yesterday's equipment.
+                </p>
+                <div class="service-price">Site Assessment Free</div>
+            </div>
+
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">🔧</span>
+                <h3 class="service-title-graphic">APPLIANCE RECYCLING</h3>
+                <p class="service-desc-graphic">
+                    Refrigerators, washers, dryers, water heaters. Proper refrigerant recovery and Oregon-compliant documentation provided.
+                </p>
+                <div class="service-price">Responsible Disposal</div>
+            </div>
+
+            <div class="service-card-graphic">
+                <span class="service-icon-graphic">♻️</span>
+                <h3 class="service-title-graphic">DROP-OFF ZONE</h3>
+                <p class="service-desc-graphic">
+                    Creswell location open for small loads. Digital scales, immediate payment, and a handshake that means something.
+                </p>
+                <div class="service-price">Cash on the Spot</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="env-strip" id="environment">
+        <div class="env-content">
+            <div class="env-stat-large">
+                <span class="env-number">100%</span>
+                <span class="env-label">Oregon Watershed Safe</span>
+            </div>
+            <div class="env-stat-large">
+                <span class="env-number">ZERO</span>
+                <span class="env-label">Landfill Waste</span>
+            </div>
+            <div class="env-stat-large">
+                <span class="env-number">24/7</span>
+                <span class="env-label">Emergency Response</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-graphic crew-section" id="crew">
+        <div class="section-header">
+            <h2 class="section-title-graphic">THE CREW</h2>
+            <p class="section-subtitle">Professional muscle meets Oregon work ethic. Easy on the eyes, hard on the scrap.</p>
+        </div>
+
+        <div class="crew-grid">
+            <div class="crew-card">
+                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #2C3539 0%, #1a1a2e 100%);">
+                    👷
+                </div>
+                <div class="crew-info-graphic">
+                    <div class="crew-name-graphic">CARSON STEC</div>
+                    <div class="crew-role">Owner / Operator</div>
+                </div>
+            </div>
+
+            <div class="crew-card">
+                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #B87333 0%, #8B4513 100%);">
+                    💪
+                </div>
+                <div class="crew-info-graphic">
+                    <div class="crew-name-graphic">RECOVERY TEAM</div>
+                    <div class="crew-role">Field Specialists</div>
+                </div>
+            </div>
+
+            <div class="crew-card">
+                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #2E5C48 0%, #1b4d3e 100%);">
+                    🌲
+                </div>
+                <div class="crew-info-graphic">
+                    <div class="crew-name-graphic">OREGON BORN</div>
+                    <div class="crew-role">Local & Licensed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="crew-tagline">
+            "We believe in doing the heavy lifting—professionally, efficiently, and looking sharp while we do it. That's the Scrap Happens standard."
+        </div>
+    </section>
+
+    <section class="section-graphic contact-graphic" id="contact">
+        <div class="section-header">
+            <h2 class="section-title-graphic">LET'S TALK</h2>
+            <p class="section-subtitle">Text a photo of your scrap for an instant quote.</p>
+        </div>
+
+        <a href="tel:541-735-5292" class="phone-big">(541) 735-5292</a>
+
+        <div style="font-size: 1.5rem; color: var(--copper); margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.2em;">
+            Carson Stec • Creswell, Oregon
+        </div>
+
+        <div class="contact-details-grid">
+            <div class="contact-item">
+                <div class="contact-label">Service Area</div>
+                <div class="contact-value">Lane County & Beyond<br>Creswell • Eugene • Springfield</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Hours</div>
+                <div class="contact-value">Mon-Sat: 7AM - 7PM<br>Sun: Emergency Only</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Creswell, OR 97426<br>Drop-off by Appointment</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; padding: 3rem; background: rgba(184, 115, 51, 0.1); border: 2px solid var(--copper); max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 1rem; color: var(--white);">TEXT YOUR SCRAP</h3>
+            <p style="font-size: 1.2rem; color: #999;">Send photos to (541) 735-5292 for immediate pricing. We accept JPG, PNG, or video walkthroughs of larger sites.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">SCRAP HAPPENS</div>
+        <div class="footer-tagline">"When life gives you scrap, make money."</div>
+        
+        <div class="service-areas">
+            <span>Creswell</span>
+            <span>•</span>
+            <span>Eugene</span>
+            <span>•</span>
+            <span>Springfield</span>
+            <span>•</span>
+            <span>Cottage Grove</span>
+            <span>•</span>
+            <span>Veneta</span>
+            <span>•</span>
+            <span>Junction City</span>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Scrap Happens LLC. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Licensed • Bonded • Insured • Oregon Proud</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card-graphic, .crew-card').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
