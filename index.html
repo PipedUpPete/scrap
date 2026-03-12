@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCRAP HAPPENS | Premium Metal Recovery | Creswell, OR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Scrap Happens | Metal Recycling | Creswell, OR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,38 +13,152 @@
         }
 
         :root {
-            --rust: #8B4513;
-            --copper: #B87333;
-            --steel: #71797E;
-            --iron: #2C3539;
-            --black: #0a0a0a;
+            --black: #0f0f0f;
+            --charcoal: #1a1a1a;
+            --gray-dark: #2d2d2d;
+            --gray-mid: #666666;
+            --gray-light: #e0e0e0;
             --white: #ffffff;
-            --accent: #FF4500;
-            --oregon-green: #2E5C48;
+            --green: #3d5c3d;
+            --green-bright: #4a7c4a;
+            --green-dark: #2d4a2d;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--charcoal);
             line-height: 1.6;
-            overflow-x: hidden;
+            font-size: 16px;
+            letter-spacing: 0.02em;
         }
 
-        /* GRAPHIC HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            background: 
-                linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(44,53,57,0.8) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect fill="%230a0a0a" width="1000" height="1000"/><path fill="%231a1a1a" d="M0 0h1000v1000H0z" opacity="0.5"/><circle fill="%232C3539" cx="200" cy="200" r="150" opacity="0.3"/><circle fill="%238B4513" cx="800" cy="800" r="200" opacity="0.2"/></svg>');
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        h1, h2, h3, .logo-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* SH Monogram Utility */
+        .sh-mark {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 700;
+            background: var(--green);
+            color: var(--white);
+            display: inline-flex;
             align-items: center;
-            text-align: center;
+            justify-content: center;
+            border-radius: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--black);
+            border-bottom: 4px solid var(--green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--green);
+            color: var(--white);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -1px;
+            border: 2px solid var(--green-bright);
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            color: var(--white);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: var(--green-bright);
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
             position: relative;
-            border-bottom: 8px solid var(--copper);
+        }
+
+        .nav-links a:hover {
+            color: var(--green-bright);
+        }
+
+        .nav-contact {
+            text-align: right;
+        }
+
+        .nav-phone {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: block;
+        }
+
+        .nav-address {
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--gray-dark) 100%);
+            min-height: 700px;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -54,794 +168,1066 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(184, 115, 51, 0.03) 10px,
-                rgba(184, 115, 51, 0.03) 20px
-            );
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(61, 92, 61, 0.03) 50px, rgba(61, 92, 61, 0.03) 51px),
+                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(61, 92, 61, 0.03) 50px, rgba(61, 92, 61, 0.03) 51px);
             pointer-events: none;
         }
 
-        .logo-main {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(4rem, 15vw, 12rem);
-            letter-spacing: 0.05em;
-            color: var(--white);
-            text-shadow: 
-                0 0 20px rgba(184, 115, 51, 0.5),
-                4px 4px 0px var(--rust);
-            margin-bottom: 0.5rem;
+        .hero-content {
+            padding: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
             z-index: 2;
-            line-height: 0.9;
         }
 
-        .tagline-graphic {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            letter-spacing: 0.2em;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--green);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            color: var(--copper);
+            letter-spacing: 0.15em;
             margin-bottom: 2rem;
-            border-top: 2px solid var(--copper);
-            border-bottom: 2px solid var(--copper);
-            padding: 1rem 2rem;
-            background: rgba(0,0,0,0.5);
+            width: fit-content;
+            border-left: 4px solid var(--green-bright);
         }
 
-        .hero-graphic {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, var(--copper) 0%, transparent 70%);
-            border-radius: 50%;
+        .hero-badge .sh-mark {
+            width: 24px;
+            height: 24px;
+            font-size: 0.8rem;
+            background: var(--white);
+            color: var(--green);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            color: var(--white);
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 em {
+            color: var(--green-bright);
+            font-style: normal;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray-light);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .feature-mark {
+            width: 32px;
+            height: 32px;
+            background: var(--green);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem;
-            margin: 2rem 0;
-            animation: pulse 3s infinite;
-            box-shadow: 0 0 60px rgba(184, 115, 51, 0.4);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        .cta-hero {
-            margin-top: 3rem;
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn-big {
-            padding: 1.5rem 4rem;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            background: var(--copper);
-            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(184, 115, 51, 0.3);
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn-big::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
+        .btn-primary {
+            background: var(--green);
+            color: var(--white);
+            border: 2px solid var(--green);
         }
 
-        .btn-big:hover::before {
-            left: 100%;
-        }
-
-        .btn-big:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(184, 115, 51, 0.5);
+        .btn-primary:hover {
+            background: var(--green-bright);
+            border-color: var(--green-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(61, 92, 61, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            border: 3px solid var(--white);
             color: var(--white);
+            border: 2px solid var(--gray-mid);
         }
 
         .btn-outline:hover {
-            background: var(--white);
-            color: var(--black);
+            border-color: var(--green-bright);
+            color: var(--green-bright);
         }
 
-        /* NAVIGATION BAR */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            z-index: 1000;
-            border-bottom: 3px solid var(--copper);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--copper);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--copper);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--copper);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* GRAPHIC SECTION HEADERS */
-        .section-graphic {
-            padding: 8rem 2rem;
+        .hero-image {
             position: relative;
             overflow: hidden;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            position: relative;
-        }
-
-        .section-title-graphic {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            color: var(--white);
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title-graphic::after {
-            content: "";
-            display: block;
+        .hero-image img {
             width: 100%;
-            height: 8px;
-            background: var(--copper);
-            margin-top: 1rem;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(1.1);
         }
 
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: var(--steel);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* SERVICES GRID WITH GRAPHICS */
-        .services-dark {
-            background: 
-                linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)),
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(184, 115, 51, 0.05) 50px,
-                    rgba(184, 115, 51, 0.05) 51px
-                );
-        }
-
-        .services-grid-graphic {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .service-card-graphic {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border: 2px solid #333;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .service-card-graphic::before {
+        .hero-image::after {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--copper);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--charcoal) 0%, transparent 30%);
         }
 
-        .service-card-graphic:hover {
-            border-color: var(--copper);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        /* Info Bar */
+        .info-bar {
+            background: var(--black);
+            border-top: 1px solid var(--gray-dark);
+            border-bottom: 4px solid var(--green);
+            padding: 2rem;
         }
 
-        .service-card-graphic:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon-graphic {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        .service-title-graphic {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .service-desc-graphic {
-            color: #999;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .service-price {
-            color: var(--copper);
-            font-weight: 800;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ENVIRONMENTAL STRIP */
-        .env-strip {
-            background: var(--oregon-green);
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .env-strip::before {
-            content: "♻";
-            position: absolute;
-            font-size: 20rem;
-            opacity: 0.1;
-            right: -50px;
-            top: -50px;
-            color: var(--white);
-        }
-
-        .env-content {
-            max-width: 1200px;
+        .info-container {
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
             gap: 3rem;
-            position: relative;
-            z-index: 2;
         }
 
-        .env-stat-large {
-            text-align: center;
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
-        .env-number {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: var(--white);
-            display: block;
-            line-height: 1;
-        }
-
-        .env-label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: rgba(255,255,255,0.8);
-            margin-top: 0.5rem;
-        }
-
-        /* CREW SECTION - VISUAL */
-        .crew-section {
-            background: var(--iron);
-            position: relative;
-        }
-
-        .crew-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .crew-card {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            background: linear-gradient(to bottom, #333 0%, #1a1a1a 100%);
-            border: 3px solid #444;
-        }
-
-        .crew-image-placeholder {
-            width: 100%;
-            height: 70%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gray-dark);
+            border: 2px solid var(--green);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            position: relative;
-        }
-
-        .crew-image-placeholder::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        }
-
-        .crew-info-graphic {
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .crew-name-graphic {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            color: var(--white);
-            letter-spacing: 0.05em;
+            font-size: 1.2rem;
+            color: var(--green-bright);
+            flex-shrink: 0;
         }
 
-        .crew-role {
-            color: var(--copper);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            font-weight: 600;
-        }
-
-        .crew-tagline {
-            margin-top: 4rem;
-            text-align: center;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--steel);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 2rem;
-            border-left: 4px solid var(--copper);
-            border-right: 4px solid var(--copper);
-            background: rgba(0,0,0,0.3);
-        }
-
-        /* CONTACT SECTION - BIG AND BOLD */
-        .contact-graphic {
-            background: var(--black);
-            text-align: center;
-        }
-
-        .phone-big {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            color: var(--copper);
-            text-decoration: none;
-            display: block;
-            margin: 3rem 0;
-            letter-spacing: 0.05em;
-            transition: all 0.3s;
-            text-shadow: 0 0 30px rgba(184, 115, 51, 0.3);
-        }
-
-        .phone-big:hover {
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        .contact-details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 4rem auto;
-            text-align: left;
-        }
-
-        .contact-item {
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-left: 4px solid var(--copper);
-        }
-
-        .contact-label {
-            color: var(--copper);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.9rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-value {
+        .info-content h4 {
+            font-family: 'Rajdhani', sans-serif;
             font-size: 1.3rem;
             color: var(--white);
-            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.3rem;
         }
 
-        /* FOOTER GRAPHIC */
-        footer {
-            background: #050505;
-            padding: 4rem 2rem;
-            border-top: 8px solid var(--copper);
+        .info-content p {
+            color: var(--gray-mid);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
         }
 
-        .footer-logo {
+        .section-header::before {
+            content: "SH";
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            color: var(--gray-light);
+            opacity: 0.2;
+            position: absolute;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            letter-spacing: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--charcoal);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray-mid);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--green);
+            margin: 1.5rem auto;
+        }
+
+        /* Services */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+            padding: 3rem 2rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--green);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card.featured {
+            background: var(--charcoal);
+            border-color: var(--green);
+            color: var(--white);
+        }
+
+        .service-card.featured h3,
+        .service-card.featured p {
+            color: var(--white);
+        }
+
+        .service-card.featured .service-icon {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            color: var(--gray-mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-meta {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-meta::before {
+            content: "•";
+            color: var(--green);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .about-content p {
+            color: var(--gray-mid);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-box {
+            background: var(--white);
+            border-left: 4px solid var(--green);
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 3rem;
-            color: var(--copper);
-            margin-bottom: 2rem;
+            color: var(--charcoal);
+            line-height: 1;
         }
 
-        .footer-tagline {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .service-areas {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 3rem 0;
-            color: #444;
+        .stat-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            color: var(--gray-mid);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
-        .copyright {
-            color: #333;
-            margin-top: 3rem;
+        .about-image {
+            position: relative;
+            border: 4px solid var(--charcoal);
+            outline: 4px solid var(--green);
+            outline-offset: -20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        /* Team */
+        .team {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .team .section-header h2 {
+            color: var(--white);
+        }
+
+        .team .section-header p {
+            color: var(--gray-mid);
+        }
+
+        .team .section-header::before {
+            color: var(--gray-dark);
+            opacity: 0.3;
+        }
+
+        .team-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--gray-dark);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            border-color: var(--green);
+            background: rgba(61, 92, 61, 0.1);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            background: var(--gray-dark);
+            border: 3px solid var(--green);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--green-bright);
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .team-role {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            color: var(--green-bright);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--gray-mid);
+            font-style: italic;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .contact-info > p {
+            color: var(--gray-mid);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .contact-block {
+            margin-bottom: 2.5rem;
+            padding-left: 2rem;
+            border-left: 4px solid var(--green);
+        }
+
+        .contact-block h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-mid);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-block p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .contact-block a {
+            color: var(--green);
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .contact-form {
+            background: var(--charcoal);
+            padding: 4rem;
+            border: 4px solid var(--green);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--gray-dark);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--green-bright);
+            letter-spacing: 0.25em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            border-top: 4px solid var(--green);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-icon {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            color: var(--gray-mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h4 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--green);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-mid);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--green-bright);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-dark);
             padding-top: 2rem;
-            border-top: 1px solid #222;
+            text-align: center;
+            color: var(--gray-mid);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        /* MOBILE */
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                height: 400px;
+                order: -1;
+            }
+            
+            .hero-content {
+                padding: 4rem 2rem;
+            }
+            
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
             .nav-links {
                 display: none;
             }
             
-            .services-grid-graphic {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
             
-            .crew-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .env-content {
+            .info-container {
                 flex-direction: column;
+                align-items: flex-start;
             }
-        }
-
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.8s ease-out;
         }
     </style>
-<base target="_blank">
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">SCRAP HAPPENS</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#environment">Environment</a></li>
-                <li><a href="#crew">The Crew</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a href="#" class="logo">
+                <div class="logo-icon">SH</div>
+                <div class="logo-text">Scrap <span>Happens</span></div>
+            </a>
+            
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Crew</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-contact">
+                <a href="tel:541-735-5292" class="nav-phone">(541) 735-5292</a>
+                <div class="nav-address">469 Morse Ave, Creswell</div>
+            </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-graphic">⚡</div>
-        <h1 class="logo-main">SCRAP HAPPENS</h1>
-        <div class="tagline-graphic">Premium Metal Recovery • Creswell, Oregon</div>
-        <p style="font-size: 1.3rem; color: #999; max-width: 600px; margin: 2rem auto;">
-            When metal piles up, we muscle it out. Professional scrap removal with an Oregon conscience.
-        </p>
-        <div class="cta-hero">
-            <a href="tel:541-735-5292" class="btn-big">Call Carson Now</a>
-            <a href="#services" class="btn-big btn-outline">View Services</a>
-        </div>
-    </section>
-
-    <section class="section-graphic services-dark" id="services">
-        <div class="section-header">
-            <h2 class="section-title-graphic">WHAT WE HAUL</h2>
-            <p class="section-subtitle">No job too heavy. No pile too ugly. We take it all.</p>
-        </div>
-
-        <div class="services-grid-graphic">
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">🚛</span>
-                <h3 class="service-title-graphic">FREE PICKUP</h3>
-                <p class="service-desc-graphic">
-                    You sit back. We sweat. Free residential and commercial pickup anywhere in Lane County. Trucks, trailers, and heavy equipment ready to roll.
-                </p>
-                <div class="service-price">$0 Call-out Fee</div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="sh-mark">SH</span>
+                <span>Free Pickup Within 30 Miles</span>
             </div>
+            
+            <h1>Professional Metal <em>Recycling</em></h1>
+            
+            <p class="hero-subtitle">
+                No charge for pickup. Commercial and residential scrap metal removal based in Creswell, Oregon. We haul, you profit.
+            </p>
 
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">⚡</span>
-                <h3 class="service-title-graphic">COPPER & BRASS</h3>
-                <p class="service-desc-graphic">
-                    Premium pricing for premium metals. We separate your #1 and #2 copper, brass fittings, and insulated wire. You get paid what it's worth.
-                </p>
-                <div class="service-price">Top Market Rates</div>
-            </div>
-
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">🏗️</span>
-                <h3 class="service-title-graphic">CONSTRUCTION CLEANUP</h3>
-                <p class="service-desc-graphic">
-                    Demolition sites, renovation leftovers, job site debris. We clear steel beams, rebar, aluminum siding, and electrical scrap fast.
-                </p>
-                <div class="service-price">Contractor Rates Available</div>
-            </div>
-
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">🌲</span>
-                <h3 class="service-title-graphic">FARM & ESTATE</h3>
-                <p class="service-desc-graphic">
-                    Tractor removal, barn cleanouts, fence line clearing. We respect your land while removing the rusted legacy of yesterday's equipment.
-                </p>
-                <div class="service-price">Site Assessment Free</div>
-            </div>
-
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">🔧</span>
-                <h3 class="service-title-graphic">APPLIANCE RECYCLING</h3>
-                <p class="service-desc-graphic">
-                    Refrigerators, washers, dryers, water heaters. Proper refrigerant recovery and Oregon-compliant documentation provided.
-                </p>
-                <div class="service-price">Responsible Disposal</div>
-            </div>
-
-            <div class="service-card-graphic">
-                <span class="service-icon-graphic">♻️</span>
-                <h3 class="service-title-graphic">DROP-OFF ZONE</h3>
-                <p class="service-desc-graphic">
-                    Creswell location open for small loads. Digital scales, immediate payment, and a handshake that means something.
-                </p>
-                <div class="service-price">Cash on the Spot</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="env-strip" id="environment">
-        <div class="env-content">
-            <div class="env-stat-large">
-                <span class="env-number">100%</span>
-                <span class="env-label">Oregon Watershed Safe</span>
-            </div>
-            <div class="env-stat-large">
-                <span class="env-number">ZERO</span>
-                <span class="env-label">Landfill Waste</span>
-            </div>
-            <div class="env-stat-large">
-                <span class="env-number">24/7</span>
-                <span class="env-label">Emergency Response</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-graphic crew-section" id="crew">
-        <div class="section-header">
-            <h2 class="section-title-graphic">THE CREW</h2>
-            <p class="section-subtitle">Professional muscle meets Oregon work ethic. Easy on the eyes, hard on the scrap.</p>
-        </div>
-
-        <div class="crew-grid">
-            <div class="crew-card">
-                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #2C3539 0%, #1a1a2e 100%);">
-                    👷
+            <div class="hero-features">
+                <div class="feature">
+                    <div class="feature-mark">SH</div>
+                    <span>Complimentary pickup — Always free, no hidden fees</span>
                 </div>
-                <div class="crew-info-graphic">
-                    <div class="crew-name-graphic">CARSON STEC</div>
-                    <div class="crew-role">Owner / Operator</div>
+                <div class="feature">
+                    <div class="feature-mark">SH</div>
+                    <span>Same-day service available throughout Lane County</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-mark">SH</div>
+                    <span>469 Morse Avenue, Creswell — Local & Licensed</span>
                 </div>
             </div>
 
-            <div class="crew-card">
-                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #B87333 0%, #8B4513 100%);">
-                    💪
-                </div>
-                <div class="crew-info-graphic">
-                    <div class="crew-name-graphic">RECOVERY TEAM</div>
-                    <div class="crew-role">Field Specialists</div>
-                </div>
-            </div>
-
-            <div class="crew-card">
-                <div class="crew-image-placeholder" style="background: linear-gradient(135deg, #2E5C48 0%, #1b4d3e 100%);">
-                    🌲
-                </div>
-                <div class="crew-info-graphic">
-                    <div class="crew-name-graphic">OREGON BORN</div>
-                    <div class="crew-role">Local & Licensed</div>
-                </div>
+            <div class="hero-buttons">
+                <a href="tel:541-735-5292" class="btn btn-primary">Schedule Now</a>
+                <a href="#services" class="btn btn-outline">View Services</a>
             </div>
         </div>
-
-        <div class="crew-tagline">
-            "We believe in doing the heavy lifting—professionally, efficiently, and looking sharp while we do it. That's the Scrap Happens standard."
-        </div>
-    </section>
-
-    <section class="section-graphic contact-graphic" id="contact">
-        <div class="section-header">
-            <h2 class="section-title-graphic">LET'S TALK</h2>
-            <p class="section-subtitle">Text a photo of your scrap for an instant quote.</p>
-        </div>
-
-        <a href="tel:541-735-5292" class="phone-big">(541) 735-5292</a>
-
-        <div style="font-size: 1.5rem; color: var(--copper); margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.2em;">
-            Carson Stec • Creswell, Oregon
-        </div>
-
-        <div class="contact-details-grid">
-            <div class="contact-item">
-                <div class="contact-label">Service Area</div>
-                <div class="contact-value">Lane County & Beyond<br>Creswell • Eugene • Springfield</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Hours</div>
-                <div class="contact-value">Mon-Sat: 7AM - 7PM<br>Sun: Emergency Only</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label">Location</div>
-                <div class="contact-value">Creswell, OR 97426<br>Drop-off by Appointment</div>
-            </div>
-        </div>
-
-        <div style="margin-top: 4rem; padding: 3rem; background: rgba(184, 115, 51, 0.1); border: 2px solid var(--copper); max-width: 800px; margin-left: auto; margin-right: auto;">
-            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 1rem; color: var(--white);">TEXT YOUR SCRAP</h3>
-            <p style="font-size: 1.2rem; color: #999;">Send photos to (541) 735-5292 for immediate pricing. We accept JPG, PNG, or video walkthroughs of larger sites.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">SCRAP HAPPENS</div>
-        <div class="footer-tagline">"When life gives you scrap, make money."</div>
         
-        <div class="service-areas">
-            <span>Creswell</span>
-            <span>•</span>
-            <span>Eugene</span>
-            <span>•</span>
-            <span>Springfield</span>
-            <span>•</span>
-            <span>Cottage Grove</span>
-            <span>•</span>
-            <span>Veneta</span>
-            <span>•</span>
-            <span>Junction City</span>
+        <div class="hero-image">
+            <img src="https://kimi-web-img.moonshot.cn/img/glescrap.com/51754f419feeb47b05e91029c834c037b32edacc.jpg" alt="Scrap metal recycling">
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <div class="info-bar">
+        <div class="info-container">
+            <div class="info-item">
+                <div class="info-icon">SH</div>
+                <div class="info-content">
+                    <h4>469 Morse Avenue</h4>
+                    <p>Creswell, OR 97426</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">SH</div>
+                <div class="info-content">
+                    <h4>Free Local Pickup</h4>
+                    <p>Within 30 Miles</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">SH</div>
+                <div class="info-content">
+                    <h4>(541) 735-5292</h4>
+                    <p>Call or Text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Services</h2>
+            <div class="divider"></div>
+            <p>Professional metal recovery with complimentary pickup. No mileage charges, no minimums, no surprises.</p>
         </div>
 
-        <div class="copyright">
-            <p>&copy; 2026 Scrap Happens LLC. All rights reserved.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">Licensed • Bonded • Insured • Oregon Proud</p>
+        <div class="services-grid">
+            <div class="service-card featured">
+                <div class="service-icon">🚛</div>
+                <h3>Free Pickup</h3>
+                <p>We provide complimentary pickup services for all ferrous and non-ferrous metals within 30 miles of Creswell. Residential, commercial, and industrial sites. No fuel surcharges, no fees.</p>
+                <div class="service-meta">Always Free</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Copper & Brass</h3>
+                <p>Premium-grade sorting and pricing for #1 and #2 copper, brass fittings, and insulated wire. On-site evaluation and immediate payment processing.</p>
+                <div class="service-meta">Top Market Rates</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Construction</h3>
+                <p>Complete site remediation for contractors. Steel beams, rebar, aluminum siding, and electrical scrap removed efficiently to keep your project on schedule.</p>
+                <div class="service-meta">Contractor Rates</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌲</div>
+                <h3>Farm & Estate</h3>
+                <p>Agricultural equipment removal, estate clearouts, and rural property cleanup. We navigate rough terrain and respect your land.</p>
+                <div class="service-meta">Rural Service</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Appliances</h3>
+                <p>Responsible appliance recycling with refrigerant recovery and Oregon-compliant documentation. Washers, dryers, refrigerators, and HVAC units.</p>
+                <div class="service-meta">Eco Certified</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">♻️</div>
+                <h3>Drop-Off</h3>
+                <p>Bring your scrap directly to 469 Morse Avenue. Digital scales, verified weights, and immediate payment. Open Monday through Saturday.</p>
+                <div class="service-meta">Walk-ins Welcome</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Oregon's Recovery Standard</h2>
+                <p>Scrap Happens operates from 469 Morse Avenue in Creswell, providing Lane County with professional metal recycling services. We combine industrial efficiency with environmental responsibility.</p>
+                <p>Every load we process is diverted from Oregon landfills and waterways. Our complimentary pickup service ensures that removing scrap metal never costs you money—it only makes you money.</p>
+                <p>Led by Carson Stec, our crew delivers punctual, professional service with the work ethic that defines the Willamette Valley.</p>
+
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">$0</div>
+                        <div class="stat-label">Pickup Fee</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">30</div>
+                        <div class="stat-label">Mile Radius</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Licensed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/046274fa1aff7fd446a5a2db059c1238add5b7fb.jpg" alt="Steel recycling">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team" id="team">
+        <div class="section-header">
+            <h2>The Crew</h2>
+            <div class="divider"></div>
+            <p>Professional, punctual, and easy to work with. Serving Creswell and Lane County.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-photo">CS</div>
+                <h3>Carson Stec</h3>
+                <div class="team-role">Owner / Operator</div>
+                <p>"Professional service with a personal touch. We show up ready to work."</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo">SH</div>
+                <h3>Field Team</h3>
+                <div class="team-role">Recovery Specialists</div>
+                <p>"Heavy lifting done right. Clean, efficient, and professional."</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo">OR</div>
+                <h3>Oregon Born</h3>
+                <div class="team-role">Local & Licensed</div>
+                <p>"Creswell based, Lane County proud. 469 Morse Avenue headquarters."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p>Ready to clear your scrap? We provide free estimates and complimentary pickup throughout our service area. Text photos of your materials for quick pricing.</p>
+
+                <div class="contact-block">
+                    <h4>Business Address</h4>
+                    <p>469 Morse Avenue<br>Creswell, Oregon 97426</p>
+                </div>
+
+                <div class="contact-block">
+                    <h4>Phone</h4>
+                    <a href="tel:541-735-5292">(541) 735-5292</a>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray-mid);">Monday–Saturday, 7AM–7PM</p>
+                </div>
+
+                <div class="contact-block">
+                    <h4>Service Area</h4>
+                    <p>Free pickup within 30 miles of Creswell, including Eugene, Springfield, Cottage Grove, and surrounding areas.</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" placeholder="(541) 555-0123">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Type</label>
+                        <select id="service">
+                            <option>Free Pickup - Residential</option>
+                            <option>Free Pickup - Commercial</option>
+                            <option>Construction Cleanup</option>
+                            <option>Appliance Removal</option>
+                            <option>Drop-off Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Details</label>
+                        <textarea id="message" placeholder="Describe your scrap metal, quantity, and location..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Request Free Pickup</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-icon">SH</div>
+                <h3>Scrap Happens</h3>
+                <p>Professional metal recycling based in Creswell, Oregon. Complimentary pickup within 30 miles. 469 Morse Avenue facility.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Free Pickup</a></li>
+                    <li><a href="#">Commercial</a></li>
+                    <li><a href="#">Construction</a></li>
+                    <li><a href="#">Appliances</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Environmental</a></li>
+                    <li><a href="#">Service Area</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:541-735-5292">(541) 735-5292</a></li>
+                    <li><a href="#">469 Morse Ave</a></li>
+                    <li><a href="#">Creswell, OR 97426</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Scrap Happens LLC. All rights reserved. | 469 Morse Avenue, Creswell, OR 97426 | Licensed & Insured</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        });
-
-        document.querySelectorAll('.service-card-graphic, .crew-card').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
